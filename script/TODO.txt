@@ -1,0 +1,12 @@
+1. Modify cnnTest.py
+  a. image preprocessing: change images in different resolution to same resolution
+  b. set up label
+  c. shuffle and split the dataset to training and testing datasets
+  d. figure out how to use the batch to feed the neural net
+  e. figure out how to save the model as a file, and how to load the file
+
+2. parsingImage.py
+  a. find a appropriate sigmaGM value
+  b. maybe ask on forum how to parse the image more efficiently
+  c. get connected components and fit lines within the component first
+  d. when a correct line is fitted, remove the point on the line from the WHOLE image. 
