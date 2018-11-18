@@ -24,9 +24,8 @@ import time
 # http://www.inf.ufpr.br/vri/databases/PKLot.tar.gz
 
 
-def processImage(path):
-    # read  the image file
-    image = cv2.imread(path) 
+def processImage(image):
+     
     # convert to grayscale
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)        
     # divided by the maximum value to normalize each pixel
@@ -49,8 +48,11 @@ def prepareDataset(imageDir, batchSize=20000):
             # get the path for the image file
             path = os.path.join(root, file)
             
+            # read  the image file
+            image = cv2.imread(path)
+            
             # process image
-            gray = processImage(path)
+            gray = processImage(image)
             
             # the folder name is the text label for this file
             textLabel = os.path.basename(os.path.dirname(path))        

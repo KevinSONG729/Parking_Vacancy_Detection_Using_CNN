@@ -5,10 +5,11 @@ Created on Sat Nov 17 03:31:36 2018
 @author: qs
 """
 
-
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten
 from tensorflow.keras.layers import Conv2D, MaxPooling2D
+
+# TODO: add dropout layer
 
 # save model file need
 # !pip install h5py
@@ -35,7 +36,7 @@ model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
 # this converts our 3D feature maps to 1D feature vectors
-model.add(Flatten())  
+model.add(Flatten())
 
 # fully connected layer
 model.add(Dense(64))
@@ -53,4 +54,4 @@ model.compile(loss='binary_crossentropy',
 model.fit(data, label, batch_size=1024, epochs=3, validation_split=0.3)
 
 # save the model as a file
-model.save('model/PKLotCNN.model')
+#model.save('model/PKLotCNN.model')
